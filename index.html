@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5bd942f9d4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <title>Viewer</title>
+</head>
+<body>
+    <div id="side-bar">
+        <div id="top-bar">
+            <p><i class="fa-solid fa-bars fa-xl" id="nav-btn"></i></p>
+        </div>
+        <div id="bottom-bar">
+            <ul>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-house fa-xl"></i>
+                        <span class="nav-item">Anasayfa</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <input type="file" id="file-input">
+                        <i class="fa-solid fa-file-arrow-up fa-xl"></i>
+                        <span class="nav-item">Yükle</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" onclick="openNewTab()">
+                        <i class="fa-solid fa-bookmark fa-xl"></i>
+                        <span class="nav-item">Favoriler</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-gear fa-xl"></i>
+                        <span class="nav-item">Ayarlar</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="main-content">
+        <header>
+            <div></div>
+            <div id="kitap-adi">
+                <h2>Kitap Adı</h2>
+                <h3>Yazar</h3>
+            </div>
+            <div id="add-btn">
+                <i class="fa-solid fa-plus fa-xl"></i>
+                <h3>Favoriler</h3>
+            </div>
+        </header>
+        <main id="pdf-content"></main>
+        <footer>
+            <div class="page-btn-wrap">
+                <button id="prev-page" disabled class="page-btn"><i class="fa-solid fa-arrow-left fa-xl"></i>Önceki</button>
+            </div>
+            <div id="page-display"></div>
+            <div class="page-btn-wrap">
+                <button id="next-page" disabled class="page-btn"><i class="fa-solid fa-arrow-right fa-xl"></i>Sonraki</button>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/sidebar.js"></script>
+</body>
+</html>

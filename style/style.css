@@ -1,0 +1,161 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(217, 217, 222);
+}
+
+body {
+    display: flex;
+    background-color: rgb(35, 35, 41);
+}
+
+#main-content {
+    position: relative;
+    width: calc(100% - (80px + 3rem));
+    height: calc(100vh - 2rem);
+    top: 0;
+    left: calc(80px + 1rem);
+    transition: all 0.5s ease;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(18, 18, 18);
+    width: 100%;
+    height: 10vh;
+    margin: 1rem;
+    border-radius: 16px;
+    text-align: center;
+}
+
+main {
+    overflow-y: scroll;
+    background-color: rgb(35, 35, 41);
+    width: 100%;
+    height: 76vh;
+    margin: 1rem;
+    padding-left: 12rem;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(18, 18, 18);
+    width: 100%;
+    height: 5vh;
+    margin: 1rem;
+    border-radius: 16px;
+}
+
+.page-btn-wrap {
+    margin-top: .6rem;
+    height: 90%;
+}
+
+.page-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(1, 1, 1, 0);
+    border-style: none;
+}
+
+#side-bar {
+    position: absolute;
+    margin: 1rem;
+    border-radius: 16px;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 2rem);
+    width: 80px;
+    background-color: rgb(18, 18, 18);
+    padding: .4rem .8rem;
+    transition: all 0.6 ease;
+}
+
+#side-bar.active ~ #main-content {
+    left: calc(250px + 1rem);
+    width: calc(100% - (250px + 3rem));
+}
+
+#side-bar.active {
+    width: 250px;
+}
+
+#side-bar #nav-btn {
+    position: absolute;
+    top: .4rem;
+    left: 50%;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+#side-bar.active #nav-btn {
+    transition: all 0.5s ease;
+    left: 90%;
+}
+
+#side-bar ul li {
+    position: relative;
+    list-style: none;
+    height: 50px;
+    width: 90%;
+    margin: .8rem auto;
+    line-height: 50px;
+}
+
+#side-bar.active ul li {
+    position: relative;
+    height: 50px;
+    margin: .8rem auto;
+    line-height: 50px;
+}
+
+#side-bar ul li a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+
+.nav-item {
+    visibility: hidden;
+    margin-left: 1rem;
+}
+
+#side-bar.active .nav-item {
+    visibility: visible;
+    transition: all 0.5s ease;
+}
+
+#side-bar.active li {
+    display: flex;
+    flex-direction: row;
+}
+
+#top-bar {
+    height: 10vh;
+}
+
+#bottom-bar {
+    margin-top: 5rem;
+}
+
+input {
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    opacity: 0;
+}

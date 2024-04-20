@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/fav.css">
+    <title>Favorites</title>
+</head>
+<body onload="fetchData()">
+
+    <main>
+        <h1>Favorites</h1>
+        <div class="sep"></div>
+        <div id="fetchedData"></div>
+    </main>
+    
+
+    <script>
+        function fetchData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "scripts/fetch_data.php", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("fetchedData").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
